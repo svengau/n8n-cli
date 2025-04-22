@@ -1,0 +1,45 @@
+{
+  "name": "n8n-cli",
+  "version": "1.3.1",
+  "description": "manage n8n instances easily and remotely",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "n8n": "bin/n8n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svengau/n8n-cli.git"
+  },
+  "bugs": "https://github.com/svengau/n8n-cli/issues",
+  "homepage": "https://github.com/svengau/n8n-cli",
+  "author": "Sven (https://github.com/svengau)",
+  "keywords": [
+    "n8n",
+    "automation"
+  ],
+  "scripts": {
+    "cli": "ts-node src/cli.ts",
+    "compile": "tsc",
+    "prepublishOnly": "pnpm compile",
+    "test": "vitest",
+    "watch": "nodemon --exec 'pnpm compile' --watch src -e ts",
+    "check-updates": "npx npm-check-updates -u -i --format group --install never --target minor"
+  },
+  "dependencies": {
+    "commander": "13.1.0",
+    "cosmiconfig": "9.0.0",
+    "dayjs": "1.11.13",
+    "got": "^14.4.7",
+    "table": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.14",
+    "@types/node": "22.14.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3",
+    "vitest": "^3.1.1"
+  },
+  "packageManager": "pnpm@9.15.9"
+}
